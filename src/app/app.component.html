@@ -1,0 +1,247 @@
+<mat-accordion class="mt-30">
+  <form class="py-3" [formGroup]="sectionForm">
+  <div formArrayName="section" *ngFor="let sec of sectionForm.controls.section.value; let i = index;trackBy:trackByFn">
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [formGroupName]="i" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Section title {{ i + 1}}
+      </mat-panel-title>
+      <button mat-stroked-button color="primary" class="mr-10">Revert</button>
+      <button mat-stroked-button color="primary" class="mr-10">Save</button>
+    </mat-expansion-panel-header>
+    <mat-grid-list cols="12" rows="1" rowHeight="50px" class="mb-10">
+      <mat-grid-tile colspan="2" class="sides"></mat-grid-tile>
+      <mat-grid-tile>Sun</mat-grid-tile>
+      <mat-grid-tile>Mon</mat-grid-tile>
+      <mat-grid-tile>Tue</mat-grid-tile>
+      <mat-grid-tile>Wed</mat-grid-tile>
+      <mat-grid-tile>Thu</mat-grid-tile>
+      <mat-grid-tile>Fri</mat-grid-tile>
+      <mat-grid-tile>Sat</mat-grid-tile>
+      <mat-grid-tile colspan="3" class="sides"></mat-grid-tile>
+    </mat-grid-list>
+    <mat-accordion>
+      <div formArrayName="subSection" *ngFor="let subSec of sec.subSection; let j = index;trackBy:trackByFn">
+      <mat-expansion-panel class="mt-10" (opened)="secondPanelState = false" (closed)="secondPanelState = false" [formGroupName]="j">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Section title {{ j + 1 }}
+          </mat-panel-title>
+          <mat-checkbox class="example-margin" class="mr-10">Checkbox label</mat-checkbox>
+        </mat-expansion-panel-header>
+        <mat-grid-list cols="12" rowHeight="35px">
+          <mat-grid-tile rowspan="7" colspan="2">
+            <form class="example-form">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>First name</mat-label>
+                <input matInput>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Last name</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </form>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle disabled></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle disabled></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile rowspan="7" colspan="3">
+            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
+              visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as
+              a placeholder before final copy is available.</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput disabled class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput disabled class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput disabled class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput disabled class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <hr />
+          <mat-grid-tile colspan="7"></mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle disabled></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle disabled></mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput disabled class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput disabled class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput disabled class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput pattern="[a-z]" class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <input matInput disabled class="text-align-center">
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-expansion-panel>
+      </div>
+      <div (click)="addSubSection(i)"> Add Section </div>
+
+    </mat-accordion>
+  </mat-expansion-panel>
+  </div>
+
+  <div (click)="addSection()"> Add Section </div>
+</form>
+
+</mat-accordion>
